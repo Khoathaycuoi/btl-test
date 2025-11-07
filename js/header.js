@@ -1,6 +1,6 @@
 // Gắn link index cho logo //
 document.querySelector("#logo-store").addEventListener("click", () => {
-  window.location.href = "/index.html";
+  window.location.href = "../index.html";
 });
 
 const searchInput = document.getElementById("search-input");
