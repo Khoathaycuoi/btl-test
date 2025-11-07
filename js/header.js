@@ -41,7 +41,7 @@ function showSuggestions(keyword = "") {
           .map(
             (p) => `
           <div class="suggest-item">
-            <img src="../${p.img}" class="suggest-img" alt="${p.name}" /> 
+            <img src="./${p.img}" class="suggest-img" alt="${p.name}" /> 
             <div class="suggest-info-wrapper">
               <p class="suggest-name">${highlightMatch(p.name, value)}</p>
               <span class="suggest-price">${(
