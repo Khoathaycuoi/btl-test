@@ -1,0 +1,343 @@
+main {
+  margin-top: 18vh;
+}
+
+.khoat-nav-bar a:nth-child(1) {
+  border-bottom: 2px solid #ffffff;
+}
+
+/* video intro */
+.vid-intro {
+  width: 90%;
+  height: auto;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0 auto 40px auto;
+}
+
+.vid-intro video {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* ---------------Slide--------------- */
+#carouselExampleIndicators {
+  z-index: 1;
+  margin: auto;
+  width: 90%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.carousel-item img {
+  border-radius: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*--------------- Card ------------------*/
+.card {
+  padding: 20px;
+  border-radius: 12px !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card img {
+  border-radius: 12px;
+}
+.card-img-top {
+  height: 70%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  border: none;
+  padding: 10px;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.text-danger {
+  font-size: 24px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.text-delivery {
+  color: #0d6efd;
+}
+
+/* ------------------ Vì sao chọn G11 ------------------ */
+.why-ip {
+  margin: 100px auto;
+  margin-bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 60px 0;
+  background-color: #f7f7f7;
+}
+
+.why-h {
+  width: 60%;
+  margin-left: 100px;
+}
+
+.why-h h2 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.why-ip-item {
+  display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  gap: 20px;
+  margin: 40px 0;
+  padding: 0 40px;
+}
+
+/* ẩn thanh cuộn */
+.why-ip-item::-webkit-scrollbar {
+  display: none;
+}
+
+.why-card {
+  margin: 20px 0;
+  min-width: 350px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.why-p {
+  width: 100%;
+  height: 50%;
+  padding: 30px 30px 0px 30px;
+}
+
+.why-p p {
+  font-size: 16px;
+}
+
+.why-p h6 {
+  font-size: 18px;
+  /* font-weight: 600; */
+  margin-bottom: 10px;
+}
+
+.why-p h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.why-img {
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.why-img img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.chuyengia-apple img,
+.tui-apple img {
+  height: 100%;
+}
+.store-app img {
+  width: 70%;
+}
+
+/* ------------------ Popup thêm vào giỏ hàng ------------------ */
+.add-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.add-popup-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.25s ease;
+}
+.add-popup-content img {
+  width: 120px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.qty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.qty-box button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #dc3545;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.qty-box span {
+  min-width: 25px;
+  font-weight: 600;
+}
+.popup-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.popup-buttons button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+#confirmAdd {
+  background: #dc3545;
+  color: #fff;
+}
+#cancelAdd {
+  background: #ccc;
+}
+
+/* ---------------Responsive------------- */
+
+/* tablet lớn*/
+@media (max-width: 992px) {
+  main {
+    margin-top: 25vh;
+  }
+  #carouselExampleIndicators {
+    width: 90%;
+  }
+
+  .vid-intro {
+    width: 90%;
+  }
+  .box-sp-home {
+    margin: 60px auto;
+  }
+  .box-sp-item {
+    margin: 0 15px;
+  }
+
+  .why-h {
+    width: 70%;
+  }
+
+  .why-h h2 {
+    font-size: 50px;
+  }
+
+  .add-popup-content {
+    width: 350px;
+  }
+}
+
+/* Tablet nhỏ */
+@media (max-width: 768px) {
+  main {
+    margin-top: 20px;
+  }
+
+  #carouselExampleIndicators {
+    width: 95%;
+  }
+
+  .vid-intro {
+    width: 95%;
+  }
+
+  .why-h {
+    margin-left: 50px;
+    width: 80%;
+  }
+  .why-h h2 {
+    font-size: 40px;
+  }
+  .add-popup-content {
+    width: 350px;
+  }
+}
+
+/* điện thoại */
+@media (max-width: 480px) {
+  main {
+    margin-top: 30px;
+  }
+
+  #carouselExampleIndicators {
+    width: 95%;
+  }
+
+  .video-intro {
+    width: 95%;
+  }
+
+  .carousel-item img {
+    border-radius: 10px;
+  }
+
+  .box-sp-home {
+    flex-direction: column;
+    margin: 40px auto;
+  }
+  .box-sp-item {
+    flex: 0 0 90%;
+    margin: 10px auto;
+  }
+
+  /* Popup thêm vào giỏ */
+  .add-popup-content {
+    width: 300px;
+    padding: 15px;
+  }
+
+  /* Chọn số lượng thêm vào giỏ */
+  .qty-box button {
+    width: 28px;
+    height: 28px;
+  }
+  .qty-box span {
+    min-width: 20px;
+  }
+
+  /* Box sản phẩm text */
+  .box-sp-item p {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Khám phá và mua sắm các dòng iPhone mới nhất tại G11-Store. iPhone 17, 16, 15, 14 series chính hãng, giá tốt nhất. Cung cấp tất cả các dòng iphone. Hỗ trợ trả góp 0%, bảo hành uy tín."
+    />
+    <meta
+      name="keywords"
+      content="mua iphone, giá iphone, iphone chính hãng, iphone 17, iphone 16 pro max, iphone 15 plus, iphone trả góp 0%, G11-Store"
+    />
+    <title>iPhone</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/iphone.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="../js/iphone-data.js" defer></script>
+    <script src="../js/mac-data.js" defer></script>
+    <script src="../js/ipad-data.js" defer></script>
+    <script src="../js/watch-data.js" defer></script>
+    <script src="../js/phukien-data.js" defer></script>
+    <script src="../js/header.js" defer></script>
+    <script src="../js/iphone.js" defer></script>
+  </head>
+  <body>
+    <!------------------------------------ Header ------------------------------------------->
+    <header class="khoat-header">
+      <div class="khoat-top-banner">
+        <div class="scroll-text">
+          <p>
+            Giao hàng nhanh - Miễn phí cho đơn 300k • Thu cũ giá ngon - Lên đời
+            tiết kiệm • Sản phẩm Chính hãng - Xuất VAT đầy đủ • Hỗ trợ trả góp
+            lãi suất 0% • Mua online - Nhận hàng tận nơi • Giao hàng nhanh -
+            Miễn phí cho đơn 300k • Thu cũ giá ngon - Lên đời tiết kiệm • Sản
+            phẩm Chính hãng - Xuất VAT đầy đủ • Hỗ trợ trả góp lãi suất 0% • Mua
+            online - Nhận hàng tận nơi • Giao hàng nhanh - Miễn phí cho đơn 300k
+            • Thu cũ giá ngon - Lên đời tiết kiệm • Sản phẩm Chính hãng - Xuất
+            VAT đầy đủ • Hỗ trợ trả góp lãi suất 0% • Mua online - Nhận hàng tận
+            nơi
+          </p>
+        </div>
+      </div>
+      <div class="khoat-header-content">
+        <img id="logo-store" src="../assets/icons/header/LogoG11.png" alt="" />
+        <nav class="khoat-nav-bar">
+          <a href="./iphone.html">IPHONE</a>
+          <a href="./mac.html">MAC</a>
+          <a href="./ipad.html">IPAD</a>
+          <a href="./watch.html">WATCH</a>
+          <a href="./phukien.html">PHỤ KIỆN</a>
+          <a href="./care.html">CARE</a>
+          <div class="search-box">
+            <input
+              id="search-input"
+              class=""
+              type="text"
+              placeholder="Bạn muốn mua gì?"
+            />
+            <img
+              id="search-ic"
+              src="../assets/icons/header/search.png"
+              alt=""
+            />
+            <div class="search-popup" id="search-popup"></div>
+          </div>
+          <div class="giohang">
+            <p>Giỏ hàng</p>
+            <img src="../assets/icons/header/Giohang.png" alt="" />
+          </div>
+          <div class="signin">
+            <p>Đăng nhập</p>
+            <img src="../assets/icons/header/Dangnhap.png" alt="" />
+          </div>
+        </nav>
+      </div>
+
+      <!-- Popup Giỏ hàng -->
+      <div id="cart-popup" class="cart-popup">
+        <div class="cart-content">
+          <h4>🛒 Giỏ hàng của bạn</h4>
+
+          <div class="cart-header">
+            <span>Ảnh</span>
+            <span>Tên sản phẩm</span>
+            <span>Đơn giá</span>
+            <span>Số lượng</span>
+            <span>Thành tiền</span>
+          </div>
+
+          <div id="cart-items"></div>
+
+          <div class="cart-footer">
+            <p class="cart-total">Tổng cộng: <span id="cart-total">0</span>đ</p>
+            <div class="cart-buttons">
+              <button id="close-cart" class="btn btn-outline-secondary">
+                Đóng
+              </button>
+              <button id="checkout" class="btn btn-danger">Đặt hàng</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Popup đăng nhập/ đăng ký -->
+
+      <!-- POPUP ĐĂNG NHẬP -->
+      <div class="popup-bg" id="login-popup">
+        <div class="popup-box">
+          <h3>Đăng nhập</h3>
+          <div class="input-div">
+            <p>Số điện thoại</p>
+            <input
+              type="text"
+              id="login-phone"
+              placeholder="Nhập số điện thoại của bạn"
+            />
+            <p>Mật khẩu</p>
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Nhập mật khẩu của bạn"
+            />
+          </div>
+
+          <button id="btn-login">Đăng nhập</button>
+
+          <p class="switch-form">
+            Chưa có tài khoản? <span id="open-register">Đăng ký</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- POPUP ĐĂNG KÝ -->
+      <div class="popup-bg" id="register-popup">
+        <div class="popup-box">
+          <h3>Đăng ký</h3>
+          <div class="input-div">
+            <p>Email</p>
+            <input type="text" id="email" placeholder="Nhập email của bạn" />
+            <p>Họ và Tên</p>
+            <input
+              type="text"
+              id="reg-fullname"
+              placeholder="Nhập họ và tên của bạn"
+            />
+            <p>Số điện thoại</p>
+            <input
+              type="text"
+              id="reg-phone"
+              placeholder="Nhập số điện thoại của bạn"
+            />
+            <p>Mật khẩu</p>
+            <input
+              type="password"
+              id="reg-password"
+              placeholder="Nhập mật khẩu"
+            />
+            <p>Nhập lại mật khẩu</p>
+            <input
+              type="password"
+              id="reg-confirm-password"
+              placeholder="Nhập lại mật khẩu"
+            />
+            <p>Địa chỉ (Địa chỉ nhận hàng)</p>
+            <input
+              type="text"
+              id="reg-address"
+              placeholder="Nhập địa chỉ nhận hàng"
+            />
+          </div>
+
+          <button id="btn-register">Đăng ký</button>
+
+          <p class="switch-form">
+            Đã có tài khoản? <span id="open-login">Đăng nhập</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Popup user -->
+      <ul class="user-popup" id="user-popup">
+        <li id="logout-btn">Đăng xuất</li>
+      </ul>
+    </header>
+    <!-------------------- End header --------------->
+
+    <!---------------------- Start main -------------------->
+    <main>
+      <div class="vid-intro">
+        <video controls autoplay muted loop>
+          <source src="../assets/videos/intro-iphone.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <!--------------- slide ------------------>
+      <div
+        id="carouselExampleIndicators"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"
+        class="carousel slide"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../assets/images/home/iphone3-slide.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/images/home/iphone1-slide.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/images/home/iphone-slide.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/images/home/iphone4-slide.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="khoatcard">
+        <div class="container my-5">
+          <div id="iphone-container"></div>
+        </div>
+      </div>
+
+      <!-- Popup thêm vào giỏ -->
+      <div id="add-popup" class="add-popup">
+        <div class="add-popup-content">
+          <p class="text-danger fw-bold fs-4">Vui lòng nhập số lượng</p>
+          <img id="popup-img" src="" alt="" />
+          <h5 id="popup-name"></h5>
+          <p id="popup-price"></p>
+
+          <div class="qty-box">
+            <button id="qty-minus">-</button>
+            <span id="popup-qty">1</span>
+            <button id="qty-plus">+</button>
+          </div>
+
+          <div class="popup-buttons">
+            <button id="cancelAdd">Hủy</button>
+            <button id="confirmAdd">Thêm vào giỏ</button>
+          </div>
+        </div>
+      </div>
+
+      <!------ Vì sao chọn G11 ---------->
+      <div class="why-ip">
+        <div class="why-h">
+          <h2>Vì sao G11 là nơi tốt nhất để mua iPhone?</h2>
+        </div>
+        <div class="why-ip-item">
+          <div class="why-card">
+            <div class="why-p">
+              <h6>Trade In</h6>
+              <h3>Tiết kiệm khi mua iPhone với chương trình trao đổi.</h3>
+              <p>
+                Nhận 4.700.000đ - 17.900.000đ dưới hình thức điểm tín dụng để
+                mua iPhone 17, iPhone Air hoặc iPhone 17 Pro khi bạn trao đổi
+                iPhone 13 trở lên.
+              </p>
+            </div>
+            <div class="why-img">
+              <img
+                src="../assets/images/iphone/iphone-apple.png"
+                alt="Trade In"
+              />
+            </div>
+          </div>
+
+          <div class="why-card">
+            <div class="why-p">
+              <h6>Tài Chính</h6>
+              <h3>Thanh toán hàng tháng thật dễ dàng.</h3>
+              <p>Bao gồm lựa chọn lãi suất 0%.</p>
+            </div>
+            <div class="why-img">
+              <img
+                src="../assets/images/iphone/card-apple.png"
+                alt="Tài Chính"
+              />
+            </div>
+          </div>
+
+          <div class="why-card">
+            <div class="why-p">
+              <h6>Giao Hàng Miễn Phí</h6>
+              <h3>Nhận sản phẩm đã đặt nhanh chóng và dễ dàng.</h3>
+              <p>Giao hàng tận cửa, luôn miễn phí.</p>
+            </div>
+            <div class="why-img tui-apple">
+              <img
+                src="../assets/images/iphone/tui-apple.png"
+                alt="Giao Hàng Miễn Phí"
+              />
+            </div>
+          </div>
+
+          <div class="why-card">
+            <div class="why-p">
+              <h6>Mua Sắm Có Tư Vấn</h6>
+              <h3>Mua sắm trực tiếp với chuyên gia trực tuyến.</h3>
+              <p>
+                Chọn iPhone mới cho bạn với sự hỗ trợ của Chuyên Gia trực tuyến.
+              </p>
+            </div>
+            <div class="why-img chuyengia-apple">
+              <img
+                src="../assets/images/iphone/chuyengia-apple.png"
+                alt="Mua Sắm Có Tư Vấn"
+              />
+            </div>
+          </div>
+
+          <div class="why-card">
+            <div class="why-p">
+              <h6>Ứng Dụng G11 Store</h6>
+              <h3>Khám phá trải nghiệm mua sắm được thiết kế cho bạn.</h3>
+              <p>Sử dụng ứng dụng để có phương thức mua sắm tiện lợi hơn.</p>
+            </div>
+            <div class="why-img store-app">
+              <img
+                src="../assets/images/iphone/apple-store.png"
+                alt="Ứng Dụng G11 Store"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!---------------------- End main -------------------->
+
+    <!-------------------------- Start Footer ----------------------->
+    <footer>
+      <div class="footer-container">
+        <nav class="footer-top" aria-label="Liên kết chính">
+          <ul class="footer-column">
+            <li><h3>Sản phẩm</h3></li>
+            <li><a href="./iphone.html">iPhone</a></li>
+            <li><a href="./mac.html">Mac</a></li>
+            <li><a href="./ipad.html">iPad</a></li>
+            <li><a href="./watch.html">Apple Watch</a></li>
+            <li><a href="#">AirPods</a></li>
+            <li><a href="./phukien.html">Phụ kiện</a></li>
+          </ul>
+          <ul class="footer-column">
+            <li><h3>Dịch vụ</h3></li>
+            <li><a href="./care.html">Apple Care</a></li>
+            <li><a href="#">Bảo hành</a></li>
+            <li><a href="#">Thu cũ đổi mới</a></li>
+            <li><a href="#">Trả góp 0%</a></li>
+            <li><a href="#">Giao hàng & Lắp đặt</a></li>
+          </ul>
+          <ul class="footer-column">
+            <li><h3>Hỗ trợ</h3></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+            <li><a href="#">Hướng dẫn mua hàng</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+          </ul>
+          <ul class="footer-column">
+            <li><h3>Về chúng tôi</h3></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Hệ thống cửa hàng</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </nav>
+        <div class="footer-middle">
+          <address class="footer-contact">
+            <div class="contact-item">
+              <img
+                src="../assets/icons/footer/icon_hotline.png"
+                alt="Hotline"
+              />
+              <span>Hotline: <a href="tel:19002006">1900 2006</a></span>
+            </div>
+            <div class="contact-item">
+              <img src="../assets/icons/footer/icon_mail.png" alt="Email" />
+              <span>Email: <a href="#">g11phone@hmail.com</a></span>
+            </div>
+            <div class="contact-item">
+              <img src="../assets/icons/footer/icon_map.png" alt="Địa chỉ" />
+              <span>Địa chỉ: 3 Đ. Cầu Giấy, Ngọc Khánh, Đống Đa, Hà Nội</span>
+            </div>
+          </address>
+          <nav class="social-links" aria-label="Mạng xã hội">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="Facebook"
+            >
+              <img
+                src="../assets/icons/footer/icon_facebook.png"
+                alt="Facebook"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="Instagram"
+            >
+              <img
+                src="../assets/icons/footer/icon_instagram.png"
+                alt="Instagram"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="YouTube"
+            >
+              <img
+                src="../assets/icons/footer/icon_youtube.png"
+                alt="YouTube"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="TikTok"
+            >
+              <img src="../assets/icons/footer/icon_tiktok.png" alt="TikTok" />
+            </a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 G11phone. All rights reserved.</p>
+          <nav class="footer-bottom-links" aria-label="Liên kết phụ">
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Điều khoản sử dụng</a>
+            <a href="#">Sitemap</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <!-------------------- End footer ------------------->
+  </body>
+</html>

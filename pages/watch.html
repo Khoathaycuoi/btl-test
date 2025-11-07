@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Khám phá và mua sắm các dòng iPhone mới nhất tại G11-Store. iPhone 17, 16, 15, 14 series chính hãng, giá tốt nhất. Cung cấp tất cả các dòng iphone. Hỗ trợ trả góp 0%, bảo hành uy tín."
+    />
+    <meta
+      name="keywords"
+      content="mua watch, giá watch, watch chính hãng, Apple Watch Series 11, iphone 16 pro max, iphone 15 plus, iphone trả góp 0%, G11-Store"
+    />
+    <title>Watch</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/watch.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="../js/iphone-data.js" defer></script>
+    <script src="../js/mac-data.js" defer></script>
+    <script src="../js/ipad-data.js" defer></script>
+    <script src="../js/watch-data.js" defer></script>
+    <script src="../js/phukien-data.js" defer></script>
+    <script src="../js/header.js" defer></script>
+    <script src="../js/watch.js" defer></script>
+  </head>
+  <body>
+    <!------------------------------------ Header ------------------------------------------->
+    <header class="khoat-header">
+      <div class="khoat-top-banner">
+        <div class="scroll-text">
+          <p>
+            Giao hàng nhanh - Miễn phí cho đơn 300k • Thu cũ giá ngon - Lên đời
+            tiết kiệm • Sản phẩm Chính hãng - Xuất VAT đầy đủ • Hỗ trợ trả góp
+            lãi suất 0% • Mua online - Nhận hàng tận nơi • Giao hàng nhanh -
+            Miễn phí cho đơn 300k • Thu cũ giá ngon - Lên đời tiết kiệm • Sản
+            phẩm Chính hãng - Xuất VAT đầy đủ • Hỗ trợ trả góp lãi suất 0% • Mua
+            online - Nhận hàng tận nơi • Giao hàng nhanh - Miễn phí cho đơn 300k
+            • Thu cũ giá ngon - Lên đời tiết kiệm • Sản phẩm Chính hãng - Xuất
+            VAT đầy đủ • Hỗ trợ trả góp lãi suất 0% • Mua online - Nhận hàng tận
+            nơi
+          </p>
+        </div>
+      </div>
+      <div class="khoat-header-content">
+        <img id="logo-store" src="../assets/icons/header/LogoG11.png" alt="" />
+        <nav class="khoat-nav-bar">
+          <a href="./iphone.html">IPHONE</a>
+          <a href="./mac.html">MAC</a>
+          <a href="./ipad.html">IPAD</a>
+          <a href="./watch.html">WATCH</a>
+          <a href="./phukien.html">PHỤ KIỆN</a>
+          <a href="./care.html">CARE</a>
+          <div class="search-box">
+            <input
+              id="search-input"
+              class=""
+              type="text"
+              placeholder="Bạn muốn mua gì?"
+            />
+            <img
+              id="search-ic"
+              src="../assets/icons/header/search.png"
+              alt=""
+            />
+            <div class="search-popup" id="search-popup"></div>
+          </div>
+          <div class="giohang">
+            <p>Giỏ hàng</p>
+            <img src="../assets/icons/header/Giohang.png" alt="" />
+          </div>
+          <div class="signin">
+            <p>Đăng nhập</p>
+            <img src="../assets/icons/header/Dangnhap.png" alt="" />
+          </div>
+        </nav>
+      </div>
+
+      <!-- Popup Giỏ hàng -->
+      <div id="cart-popup" class="cart-popup">
+        <div class="cart-content">
+          <h4>🛒 Giỏ hàng của bạn</h4>
+
+          <div class="cart-header">
+            <span>Ảnh</span>
+            <span>Tên sản phẩm</span>
+            <span>Đơn giá</span>
+            <span>Số lượng</span>
+            <span>Thành tiền</span>
+          </div>
+
+          <div id="cart-items"></div>
+
+          <div class="cart-footer">
+            <p class="cart-total">Tổng cộng: <span id="cart-total">0</span>đ</p>
+            <div class="cart-buttons">
+              <button id="close-cart" class="btn btn-outline-secondary">
+                Đóng
+              </button>
+              <button id="checkout" class="btn btn-danger">Đặt hàng</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Popup đăng nhập/ đăng ký -->
+
+      <!-- POPUP ĐĂNG NHẬP -->
+      <div class="popup-bg" id="login-popup">
+        <div class="popup-box">
+          <h3>Đăng nhập</h3>
+          <div class="input-div">
+            <p>Số điện thoại</p>
+            <input
+              type="text"
+              id="login-phone"
+              placeholder="Nhập số điện thoại của bạn"
+            />
+            <p>Mật khẩu</p>
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Nhập mật khẩu của bạn"
+            />
+          </div>
+
+          <button id="btn-login">Đăng nhập</button>
+
+          <p class="switch-form">
+            Chưa có tài khoản? <span id="open-register">Đăng ký</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- POPUP ĐĂNG KÝ -->
+      <div class="popup-bg" id="register-popup">
+        <div class="popup-box">
+          <h3>Đăng ký</h3>
+          <div class="input-div">
+            <p>Email</p>
+            <input type="text" id="email" placeholder="Nhập email của bạn" />
+            <p>Họ và Tên</p>
+            <input
+              type="text"
+              id="reg-fullname"
+              placeholder="Nhập họ và tên của bạn"
+            />
+            <p>Số điện thoại</p>
+            <input
+              type="text"
+              id="reg-phone"
+              placeholder="Nhập số điện thoại của bạn"
+            />
+            <p>Mật khẩu</p>
+            <input
+              type="password"
+              id="reg-password"
+              placeholder="Nhập mật khẩu"
+            />
+            <p>Nhập lại mật khẩu</p>
+            <input
+              type="password"
+              id="reg-confirm-password"
+              placeholder="Nhập lại mật khẩu"
+            />
+            <p>Địa chỉ (Địa chỉ nhận hàng)</p>
+            <input
+              type="text"
+              id="reg-address"
+              placeholder="Nhập địa chỉ nhận hàng"
+            />
+          </div>
+
+          <button id="btn-register">Đăng ký</button>
+
+          <p class="switch-form">
+            Đã có tài khoản? <span id="open-login">Đăng nhập</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Popup user -->
+      <ul class="user-popup" id="user-popup">
+        <li id="logout-btn">Đăng xuất</li>
+      </ul>
+    </header>
+    <!-------------------- End header --------------->
+
+    <!---------------------- Start main -------------------->
+    <main>
+      <!--------------- slide ------------------>
+      <div
+        id="carouselExampleIndicators"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"
+        class="carousel slide"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../assets/images/watch/watch-slide1.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/images/watch/watch-slide2.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/images/watch/watch-slide3.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/images/watch/watch-slide4.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="kiencard">
+        <div class="container my-5">
+          <div id="watch-container"></div>
+        </div>
+      </div>
+      <div class="applewatch-box">
+        <div>
+          <h2>Apple Watch là gì?</h2>
+          <p>
+            <strong>Apple Watch</strong> là dòng đồng hồ thông minh được tạo ra
+            bởi Apple Inc., ra mắt ngày 9 tháng 9 năm 2014 với 3 bộ sưu tập
+            Apple Watch Sport, Apple Watch, Apple Watch Edition. có nhiều chức
+            năng thông minh mà đồng hồ thông thường không có như: cho phép người
+            dùng theo dõi thể thao, các chức năng liên quan đến sức khỏe,…
+          </p>
+
+          <p>
+            Dòng sản phẩm này chạy hệ điều hành watchOS, tương thích với iOS và
+            các sản phẩm dịch vụ khác của Apple, kết nối không dây với iPhone
+            thông qua kết nối Bluetooth hoặc Wifi..
+          </p>
+        </div>
+        <div>
+          <h2>Tính năng nổi bật của đồng hồ thông minh Apple Watch</h2>
+          <p>
+            Không chỉ mang đến nhiều ưu điểm về vẻ đẹp,
+            <strong>Apple Watch</strong> còn được yêu thích bởi sở hữu hàng loạt
+            tính năng thông minh. Apple luôn dẫn đầu xu hướng và thấu hiểu tâm
+            lý người dùng, mang đến trải nghiệm vượt xa một chiếc đồng hồ thông
+            thường.
+          </p>
+
+          <h6><em>Theo dõi sức khỏe</em></h6>
+          <ul>
+            <li>
+              Apple Watch có thể tạo lịch trình ngủ, theo dõi giấc ngủ, đo tần
+              số hô hấp khi ngủ và báo cáo xu hướng giấc ngủ theo thời gian.
+            </li>
+            <li>
+              Đồng hồ được trang bị cảm biến đo nhịp tim chính xác, cảnh báo khi
+              nhịp tim cao hoặc thấp bất thường.
+            </li>
+            <li>
+              Ngoài ra, tính năng
+              <em>đếm bước chân</em> thông minh giúp bạn kiểm soát hoạt động thể
+              chất và duy trì thói quen lành mạnh.
+            </li>
+          </ul>
+
+          <h6><em>Nhắn tin và Gọi điện</em></h6>
+          <ul>
+            <li>
+              Người dùng có thể nhận và trả lời tin nhắn ngay trên cổ tay với
+              các phản hồi thông minh hoặc giọng nói. Apple Watch còn cho phép
+              nhận và thực hiện cuộc gọi nhanh chóng, giúp bạn luôn kết nối dù
+              không cầm điện thoại.
+            </li>
+          </ul>
+
+          <h6><em>Trợ lý ảo Siri</em></h6>
+          <ul>
+            <li>
+              Siri — người bạn đồng hành quen thuộc từ iPhone — cũng được tích
+              hợp trên Apple Watch, giúp bạn điều khiển và tìm kiếm bằng giọng
+              nói dễ dàng hơn bao giờ hết.
+            </li>
+          </ul>
+
+          <h6><em>Digital Touch</em></h6>
+          <ul>
+            <li>
+              Tính năng <strong>Digital Touch</strong> cho phép người dùng gửi
+              hình vẽ, nhịp tim hoặc cảm xúc tới bạn bè cũng sử dụng Apple Watch
+              — một cách giao tiếp cá nhân và độc đáo.
+            </li>
+          </ul>
+
+          <h6><em>Bản đồ</em></h6>
+          <ul>
+            <li>
+              Nhờ ứng dụng bản đồ tích hợp, bạn có thể tìm đường nhanh chóng và
+              thuận tiện, tiết kiệm thời gian di chuyển hiệu quả hơn../li>
+            </li>
+          </ul>
+
+          <h6><em> Nghe nhạc</em></h6>
+          <ul>
+            <li>
+              Người dùng có thể mở nhạc, điều khiển bài hát hoặc yêu cầu Siri
+              phát nhạc theo sở thích — mang lại những phút giây thư giãn trọn
+              vẹn dù ở bất cứ đâu.
+            </li>
+          </ul>
+
+          <h6><em>Cá nhân hóa màn hình</em></h6>
+          <ul>
+            <li>
+              Apple Watch cho phép thay đổi mặt đồng hồ và phong cách hiển thị,
+              giúp người dùng thể hiện cá tính riêng và làm mới thiết bị mỗi
+              ngày.
+            </li>
+          </ul>
+
+          <h2>Thời lượng pin khủng của đồng hồ thông minh Apple Watch</h2>
+          <p>
+            <strong><em>Apple Watch</em></strong> có thể hoạt động liên tục
+            trong khoảng
+            <strong>18 giờ</strong>
+            với các tác vụ thông thường như: 90 lần xem giờ, 90 thông báo, 45
+            phút sử dụng ứng dụng và 30 phút nghe nhạc qua Bluetooth.
+          </p>
+          <p>
+            Ngoài ra, Apple Watch còn có các mức thời lượng sử dụng ấn tượng
+            trong từng trường hợp cụ thể:
+          </p>
+          <ul>
+            <li><em>3 giờ</em> gọi điện thoại qua Apple Watch.</li>
+            <li>
+              <em>7 giờ</em> cho các hoạt động đo nhịp tim, theo dõi sức khỏe.
+            </li>
+            <li><em>48 giờ</em> nếu chỉ dùng để xem giờ.</li>
+            <li>
+              <em>72 giờ</em> khi kích hoạt chế độ <em>Power Reserve</em> — chế
+              độ tiết kiệm pin tự động bật khi pin yếu, cho phép tiếp tục xem
+              giờ.
+            </li>
+          </ul>
+          <p>
+            Thời gian sạc cũng rất nhanh chóng: chỉ mất
+            <strong>1,5 giờ</strong> để sạc từ 0% lên 80%, và khoảng
+            <strong>2,5 giờ</strong> để sạc đầy 100%. Theo Apple, phiên bản
+            <strong>42mm</strong> có thời lượng pin tốt hơn so với bản
+            <strong>38mm</strong>.
+          </p>
+
+          <h2>Công nghệ trên đồng hồ thông minh Apple Watch</h2>
+          <p>
+            Được Apple đầu tư và phát triển không kém các dòng sản phẩm cao cấp
+            khác,
+            <strong>Apple Watch</strong> luôn được trang bị những công nghệ tiên
+            tiến và hiện đại nhất. Qua từng phiên bản, chiếc đồng hồ này ngày
+            càng được cải tiến, hoàn thiện hơn cả về hiệu năng lẫn trải nghiệm
+            người dùng.
+          </p>
+          <p>Một số công nghệ nổi bật được ứng dụng trên Apple Watch gồm có:</p>
+          <ul>
+            <li>
+              <em>Digital Crown:</em> núm điều khiển hình tròn nằm ở cạnh đồng
+              hồ, hoạt động tương tự như Trackwheel trên iPod. Người dùng có thể
+              xoay để cuộn nội dung, phóng to, thu nhỏ hoặc điều hướng mà không
+              cần chạm trực tiếp vào màn hình.
+            </li>
+            <li>
+              <em>Force Touch:</em> công nghệ cảm ứng lực giúp Apple Watch nhận
+              biết được các mức độ nhấn khác nhau như nhấn nhẹ, nhấn mạnh hay
+              nhấn đúp, mang lại trải nghiệm điều khiển linh hoạt và tự nhiên
+              hơn.
+            </li>
+            <li>
+              <em>Taptic Engine:</em> hệ thống rung phản hồi thông minh, mang
+              đến những cú rung nhẹ để thông báo cho người dùng về tin nhắn,
+              cuộc gọi hoặc nhắc nhở — rất tinh tế và riêng tư.
+            </li>
+            <li>
+              <em>MagSafe:</em> công nghệ sạc không dây bằng nam châm, giúp việc
+              sạc pin trở nên tiện lợi và an toàn hơn nhờ khả năng tự căn chỉnh
+              khớp hoàn hảo giữa đồng hồ và đế sạc.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Popup thêm vào giỏ -->
+      <div id="add-popup" class="add-popup">
+        <div class="add-popup-content">
+          <p class="text-danger fw-bold fs-4">Vui lòng nhập số lượng</p>
+          <img id="popup-img" src="" alt="" />
+          <h5 id="popup-name"></h5>
+          <p id="popup-price"></p>
+
+          <div class="qty-box">
+            <button id="qty-minus">-</button>
+            <span id="popup-qty">1</span>
+            <button id="qty-plus">+</button>
+          </div>
+
+          <div class="popup-buttons">
+            <button id="cancelAdd">Hủy</button>
+            <button id="confirmAdd">Thêm vào giỏ</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!---------------------- End main -------------------->
+
+    <!-------------------------- Start Footer ----------------------->
+    <footer>
+      <div class="footer-container">
+        <nav class="footer-top" aria-label="Liên kết chính">
+          <ul class="footer-column">
+            <li><h3>Sản phẩm</h3></li>
+            <li><a href="./iphone.html">iPhone</a></li>
+            <li><a href="./mac.html">Mac</a></li>
+            <li><a href="./ipad.html">iPad</a></li>
+            <li><a href="./watch.html">Apple Watch</a></li>
+            <li><a href="#">AirPods</a></li>
+            <li><a href="./phukien.html">Phụ kiện</a></li>
+          </ul>
+          <ul class="footer-column">
+            <li><h3>Dịch vụ</h3></li>
+            <li><a href="./care.html">Apple Care</a></li>
+            <li><a href="#">Bảo hành</a></li>
+            <li><a href="#">Thu cũ đổi mới</a></li>
+            <li><a href="#">Trả góp 0%</a></li>
+            <li><a href="#">Giao hàng & Lắp đặt</a></li>
+          </ul>
+          <ul class="footer-column">
+            <li><h3>Hỗ trợ</h3></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+            <li><a href="#">Hướng dẫn mua hàng</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+          </ul>
+          <ul class="footer-column">
+            <li><h3>Về chúng tôi</h3></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Hệ thống cửa hàng</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </nav>
+        <div class="footer-middle">
+          <address class="footer-contact">
+            <div class="contact-item">
+              <img
+                src="../assets/icons/footer/icon_hotline.png"
+                alt="Hotline"
+              />
+              <span>Hotline: <a href="tel:19002006">1900 2006</a></span>
+            </div>
+            <div class="contact-item">
+              <img src="../assets/icons/footer/icon_mail.png" alt="Email" />
+              <span>Email: <a href="#">g11phone@hmail.com</a></span>
+            </div>
+            <div class="contact-item">
+              <img src="../assets/icons/footer/icon_map.png" alt="Địa chỉ" />
+              <span>Địa chỉ: 3 Đ. Cầu Giấy, Ngọc Khánh, Đống Đa, Hà Nội</span>
+            </div>
+          </address>
+          <nav class="social-links" aria-label="Mạng xã hội">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="Facebook"
+            >
+              <img
+                src="../assets/icons/footer/icon_facebook.png"
+                alt="Facebook"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="Instagram"
+            >
+              <img
+                src="../assets/icons/footer/icon_instagram.png"
+                alt="Instagram"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="YouTube"
+            >
+              <img
+                src="../assets/icons/footer/icon_youtube.png"
+                alt="YouTube"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="TikTok"
+            >
+              <img src="../assets/icons/footer/icon_tiktok.png" alt="TikTok" />
+            </a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 G11phone. All rights reserved.</p>
+          <nav class="footer-bottom-links" aria-label="Liên kết phụ">
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Điều khoản sử dụng</a>
+            <a href="#">Sitemap</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <!-------------------- End footer ------------------->
+  </body>
+</html>
